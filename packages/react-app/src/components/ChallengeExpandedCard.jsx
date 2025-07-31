@@ -139,7 +139,7 @@ const ChallengeExpandedCard = ({
                   fontSize={{ base: "xl", lg: "lg" }}
                   border="2px"
                   backgroundColor="sreDark.default"
-                  disabled={true}
+                  disabled
                   borderColor="sre.default"
                   py="1rem"
                   px={4}
@@ -314,28 +314,38 @@ const ChallengeExpandedCard = ({
                   py="1rem"
                   px={4}
                 >
-                  {isChallengeComingSoon ? (
-                    <Flex justifyContent="center">
-                      <NewIcon w={6} h={6} />
-                      <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
-                        Coming Soon
-                      </chakra.span>
-                    </Flex>
-                  ) : !isChallengeLocked ? (
-                    <Flex justifyContent="center" alignItems="center">
-                      <CrossedSwordsIcon w={6} h={6} />
-                      <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
-                        Quest
-                      </chakra.span>
-                    </Flex>
-                  ) : (
-                    <Flex justifyContent="center">
-                      <PadLockIcon w={6} h={6} />
-                      <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
-                        Locked
-                      </chakra.span>
-                    </Flex>
-                  )}
+                  {(() => {
+                    if (isChallengeComingSoon) {
+                      return (
+                        <Flex justifyContent="center">
+                          <NewIcon w={6} h={6} />
+                          <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
+                            Coming Soon
+                          </chakra.span>
+                        </Flex>
+                      );
+                    }
+                    
+                    if (!isChallengeLocked) {
+                      return (
+                        <Flex justifyContent="center" alignItems="center">
+                          <CrossedSwordsIcon w={6} h={6} />
+                          <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
+                            Quest
+                          </chakra.span>
+                        </Flex>
+                      );
+                    }
+                    
+                    return (
+                      <Flex justifyContent="center">
+                        <PadLockIcon w={6} h={6} />
+                        <chakra.span color={primaryFontColor} ml={2} textTransform="uppercase" fontWeight="medium">
+                          Locked
+                        </chakra.span>
+                      </Flex>
+                    );
+                  })()}
                 </Button>
                 {!builderHasCompletedDependenciesChallenges && (
                   <Tooltip label={lockReasonToolTip}>

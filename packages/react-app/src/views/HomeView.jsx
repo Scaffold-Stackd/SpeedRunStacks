@@ -1,19 +1,19 @@
 import React, { useMemo } from "react";
-import { Container, Box, Text, Center, useColorModeValue, Button, Flex } from "@chakra-ui/react";
+import { Container, Box, Text, Center, useColorModeValue, Button } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import ChallengeExpandedCard from "../components/ChallengeExpandedCard";
 import { challengeInfo } from "../data/challenges";
 import useCustomColorModes from "../hooks/useCustomColorModes";
 import HeroLogo from "../components/icons/HeroLogo";
 import HeroDiamond from "../components/icons/HeroDiamond";
-import AfterSreCard from "../components/AfterSreCard";
-import AfterSreLine from "../components/AfterSreLine";
+// import AfterSreCard from "../components/AfterSreCard";
+// import AfterSreLine from "../components/AfterSreLine";
 
 export default function HomeView({ connectedBuilder, userProvider }) {
   const history = useHistory();
   const { primaryFontColor, bgColor } = useCustomColorModes();
   const cardBgColor = useColorModeValue("sre.cardBackground", "sreDark.cardBackground");
-  const techTreeBgColor = useColorModeValue("#96EAEA", "#3AACAD");
+  // const techTreeBgColor = useColorModeValue("#96EAEA", "#3AACAD");
 
   const builderAttemptedChallenges = useMemo(() => {
     if (!connectedBuilder?.challenges) {
@@ -103,7 +103,7 @@ export default function HomeView({ connectedBuilder, userProvider }) {
           ))}
       </Box>
 
-      <Box
+      {/* <Box
         display="flex"
         flexDirection={{ base: "column", xl: "row" }}
         justifyContent="center"
@@ -130,7 +130,7 @@ export default function HomeView({ connectedBuilder, userProvider }) {
           backgroundColor={bgColor}
         />
         <Flex display={{ base: "none", xl: "flex" }} flexGrow={1} bgColor={bgColor} />
-      </Box>
+      </Box> */}
     </Box>
   );
 }

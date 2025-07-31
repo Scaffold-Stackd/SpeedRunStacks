@@ -1,28 +1,19 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { chakra, useColorModeValue, Box, Flex, HStack, Spacer } from "@chakra-ui/react";
-import { Account } from "./index";
+// import { Account } from "./index";
 import { USER_ROLES } from "../helpers/constants";
 import { ENVIRONMENT } from "../constants";
 import useCustomColorModes from "../hooks/useCustomColorModes";
 import HeaderLogo from "./icons/HeaderLogo";
 
-export default function Header({
-  injectedProvider,
-  userRole,
-  address,
-  mainnetProvider,
-  userProvider,
-  loadWeb3Modal,
-  logoutOfWeb3Modal,
-  setUserRole,
-}) {
+export default function Header({ userRole }) {
   const { linkColor, bgColor } = useCustomColorModes();
   const primaryColorString = useColorModeValue("var(--chakra-colors-gray-700)", "var(--chakra-colors-gray-200)");
   const location = useLocation();
 
-  const isSignerProviderConnected =
-    injectedProvider && injectedProvider.getSigner && injectedProvider.getSigner()._isSigner;
+  // const isSignerProviderConnected =
+  //   injectedProvider && injectedProvider.getSigner && injectedProvider.getSigner()._isSigner;
   const userIsRegistered = userRole && USER_ROLES.anonymous !== userRole;
 
   const isHomepage = location.pathname === "/";
@@ -78,6 +69,7 @@ export default function Header({
             <chakra.li key="/portfolio" color={linkColor} _hover={{ color: primaryColorString }}>
               <NavLink
                 to="/portfolio"
+                // eslint-disable-next-line no-shadow
                 isActive={(match, location) => location.pathname.includes("/builders/")}
                 activeStyle={{
                   color: primaryColorString,
@@ -132,7 +124,7 @@ export default function Header({
         </HStack>
         <Spacer />
         <Box mt={{ base: userIsRegistered ? 3 : 0, lg: 0 }}>
-          <Account
+          {/* <Account
             address={address}
             connectText="Connect Wallet"
             ensProvider={mainnetProvider}
@@ -145,7 +137,7 @@ export default function Header({
             setUserRole={setUserRole}
             userProvider={userProvider}
             userRole={userRole}
-          />
+          /> */}
         </Box>
       </Flex>
     </Box>
