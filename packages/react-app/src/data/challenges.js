@@ -5,7 +5,7 @@ export const challengeInfo = {
     label: "🚩 Challenge 0: 🎟 Simple NFT Example",
     disabled: false,
     description:
-      "🎫 Create a simple NFT to learn basics of 🏗 scaffold-eth. You'll use 👷‍♀️ HardHat to compile and deploy smart contracts. Then, you'll use a template React app full of important Ethereum components and hooks. Finally, you'll deploy an NFT to a public network to share with friends! 🚀",
+      "🎫 Create a simple NFT to learn basics of 🏗 scaffold-stacks. You'll use clarinet to compile and deploy smart contracts. Then, you'll use a template React app full of important Stacks components and hooks. Finally, you'll deploy an NFT to a public network to share with friends! 🚀",
     previewImage: "/assets/challenges/simpleNFT.svg",
     dependencies: [],
   },
@@ -15,7 +15,7 @@ export const challengeInfo = {
     label: "🚩 Challenge 1: 🔏 Decentralized Staking App ",
     disabled: false,
     description:
-      "🦸 A superpower of Ethereum is allowing you, the builder, to create a simple set of rules that an adversarial group of players can use to work together. In this challenge, you create a decentralized application where users can coordinate a group funding effort. The users only have to trust the code.",
+      "🦸 A superpower of Stacks is allowing you, the builder, to create a simple set of rules that an adversarial group of players can use to work together. In this challenge, you create a decentralized application where users can coordinate a group funding effort. The users only have to trust the code.",
     previewImage: "/assets/challenges/stakingToken.svg",
     dependencies: [],
   },
